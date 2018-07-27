@@ -34,7 +34,7 @@ export default function(theme={}) {
       })
     },
     week: {
-      marginTop: 7,
+      marginTop: appStyle.weekMarginTop,
       flexDirection: 'row',
       justifyContent: 'space-around'
     },
