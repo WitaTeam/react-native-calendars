@@ -1,5 +1,5 @@
 import {Platform} from 'react-native';
-
+ 
 export const foregroundColor = '#ffffff';
 export const backgroundColor = '#f4f4f4';
 export const separatorColor = '#e8e9ec';
