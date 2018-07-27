@@ -1,51 +1,27 @@
-import {StyleSheet, Platform} from 'react-native';
-import * as defaultStyle from '../../style';
+import {StyleSheet} from 'react-native';
+import * as defaultStyle from '../style';
 
-const STYLESHEET_ID = 'stylesheet.calendar.header';
+const STYLESHEET_ID = 'stylesheet.calendar.main';
 
-export default function(theme={}) {
+export default function getStyle(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
-    header: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingLeft: 10,
-      paddingRight: 10,
-      alignItems: 'center'
+    container: {
+      paddingLeft: 5,
+      paddingRight: 5,
+      backgroundColor: appStyle.calendarBackground
     },
-    monthText: {
-      fontSize: appStyle.textMonthFontSize,
-      fontFamily: appStyle.textMonthFontFamily,
-      fontWeight: appStyle.textMonthFontWeight,
-      color: appStyle.monthTextColor,
-      margin: 10
-    },
-    arrow: {
-      padding: 10
-    },
-    arrowImage: {
-      ...Platform.select({
-        ios: {
-          tintColor: appStyle.arrowColor
-        },
-        android: {
-          tintColor: appStyle.arrowColor
-        }
-      })
+    monthView: {
+      backgroundColor: appStyle.calendarBackground
     },
     week: {
-      marginTop: appStyle.weekMarginTop,
+      marginTop: appStyle. dayViewMarginTop,
+      marginBottom: appStyle.dayViewMarginBottom,
       flexDirection: 'row',
       justifyContent: 'space-around'
     },
-    dayHeader: {
-      marginTop: 2,
-      marginBottom: 7,
-      width: 32,
-      textAlign: 'center',
-      fontSize: appStyle.textDayHeaderFontSize,
-      fontFamily: appStyle.textDayHeaderFontFamily,
-      color: appStyle.textSectionTitleColor
+    dayContainer: {
+      width: 32
     },
     ...(theme[STYLESHEET_ID] || {})
   });
